@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/868f20ae23.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <input
+        type="search"
+        class="form-control search-bar"
+        id="search-bar"
+        placeholder="Search"
+      />
+
+      <i
+        type="submit"
+        class="fa-solid fa-magnifying-glass search-icon"
+        id="search-icon"
+      ></i>
+      <p class="city" id="city"><br /></p>
+
+      <h1>
+        <span class="currentTemp" id="currentTemp">17</span>
+        <span class="units">°C</span>
+      </h1>
+
+      <ul>
+        <li>
+          <span id="temperatureData">11° | 17°</span>
+          <i
+            class="fa-solid fa-temperature-high fa-temperature-high temperature"
+          ></i>
+        </li>
+        <li>
+          <span id="precipitationData">20</span>%
+          <i class="fa-solid fa-droplet precipitation"></i><br />
+        </li>
+        <li>
+          <span id="windData">3</span>km/h
+          <i class="fa-solid fa-wind wind"></i>
+        </li>
+      </ul>
+
+      <p class="date" id="date">SATURDAY, 16:00</p>
+
+      <span class="dates">
+        <div class="row">
+          <div class="col-6 tomorrow">SUN</div>
+          <div class="col-6 temp">11° | 17°</div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-6 next-day">MON</div>
+          <div class="col-6 temp">15° | 18°</div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-6 two-days">TUE</div>
+          <div class="col-6 temp">10° | 18°</div>
+        </div>
+      </span>
+
+      <script src="src/index.js"></script>
+    </div>
+  </body>
+</html>
