@@ -85,3 +85,17 @@ ul {
 .dates {
   font-weight: 500;
 }
+
+.credit {
+  margin: 0 550px;
+}
+
+a {
+  color: gray;
+  text-decoration: none;
+}
+
+a:hover {
+  color: black;
+  text-decoration: none;
+}
