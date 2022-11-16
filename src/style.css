@@ -91,9 +91,9 @@ ul {
   position: relative;
   display: block;
   margin-top: -15px;
-  margin-right: 150px;
+  margin-right: 175px;
   text-align: center;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 a {
@@ -102,7 +102,7 @@ a {
 }
 
 a:hover {
-  transition: 200ms;
-  color: gray;
+  transition: 150ms;
+  color: rgb(83, 82, 82);
   text-decoration: none;
 }

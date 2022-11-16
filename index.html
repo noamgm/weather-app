@@ -36,15 +36,19 @@
       <h1>
         <span class="currentTemp" id="currentTemp">17</span>
         <span class="units">
-          <a href="#" id="c-units">°C</a>
+          <a href="#" id="cUnit">°C</a>
           /
-          <a href="#" id="f-units">°F</a>
+          <a href="#" id="fUnit">°F</a>
         </span>
       </h1>
 
       <ul>
         <li>
-          <span id="temperatureData">11° | 17°</span>
+          <span id="temperatureData">
+            <span id="minTemp">11°</span>
+            |
+            <span id="maxTemp">17°</span>
+          </span>
           <i
             class="fa-solid fa-temperature-high fa-temperature-high temperature"
           ></i>
@@ -54,7 +58,7 @@
           <i class="fa-solid fa-droplet precipitation"></i><br />
         </li>
         <li>
-          <span id="windData">3</span>km/h
+          <span id="windData">3kmh</span>
           <i class="fa-solid fa-wind wind"></i>
         </li>
       </ul>

@@ -31,14 +31,22 @@ function showWeather(response) {
   document.querySelector("#currentTemp").innerHTML = Math.round(
     response.data.main.temp
   );
-  document.querySelector("#temperatureData").innerHTML = `${Math.round(
+  document.querySelector("#minTemp").innerHTML = `${Math.round(
     response.data.main.temp_min
-  )}° | ${Math.round(response.data.main.temp_max)}°`;
+  )}°`;
+  document.querySelector("#maxTemp").innerHTML = `${Math.round(
+    response.data.main.temp_max
+  )}°`;
   document.querySelector("#precipitationData").innerHTML =
     response.data.main.humidity;
-  document.querySelector("#windData").innerHTML = Math.round(
+  document.querySelector("#windData").innerHTML = `${Math.round(
     response.data.wind.speed
-  );
+  )}kmh`;
+
+  celsiusTemp = response.data.main.temp;
+  celsiusMin = response.data.main.temp_min;
+  celsiusMax = response.data.main.temp_max;
+  windMetric = response.data.wind.speed;
 }
 
 function searchCity(city) {
@@ -55,3 +63,48 @@ function getData(event) {
 
 let searchForm = document.querySelector("#search-icon");
 searchForm.addEventListener("click", getData);
+
+let celsiusTemp = null;
+let celsiusMin = null;
+let celsiusMax = null;
+let windMetric = null;
+
+function convertToF(event) {
+  event.preventDefault();
+  let degF = Math.round(celsiusTemp * 1.8 + 32);
+  let temp = document.querySelector("#currentTemp");
+  temp.innerHTML = degF;
+
+  let minTemp = Math.round(celsiusMin * 1.8 + 32);
+  let cMin = document.querySelector("#minTemp");
+  cMin.innerHTML = `${minTemp}°`;
+
+  let maxTemp = Math.round(celsiusMax * 1.8 + 32);
+  let cMax = document.querySelector("#maxTemp");
+  cMax.innerHTML = `${maxTemp}°`;
+
+  let windImperial = Math.round(windMetric / 1.60934);
+  let windImp = document.querySelector("#windData");
+  windImp.innerHTML = `${windImperial}mph`;
+}
+
+let fConvert = document.querySelector("#fUnit");
+fConvert.addEventListener("click", convertToF);
+
+function convertToC(event) {
+  event.preventDefault();
+  let temp = document.querySelector("#currentTemp");
+  temp.innerHTML = `${Math.round(celsiusTemp)}°`;
+
+  let cMin = document.querySelector("#minTemp");
+  cMin.innerHTML = `${Math.round(celsiusMin)}°`;
+
+  let cMax = document.querySelector("#maxTemp");
+  cMax.innerHTML = `${Math.round(celsiusMax)}°`;
+
+  let windImp = document.querySelector("#windData");
+  windImp.innerHTML = `${Math.round(windMetric)}kmh`;
+}
+
+let cConvert = document.querySelector("#cUnit");
+cConvert.addEventListener("click", convertToC);
