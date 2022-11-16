@@ -71,6 +71,9 @@ let windMetric = null;
 
 function convertToF(event) {
   event.preventDefault();
+  cConvert.classList.remove("active");
+  fConvert.classList.add("active");
+
   let degF = Math.round(celsiusTemp * 1.8 + 32);
   let temp = document.querySelector("#currentTemp");
   temp.innerHTML = degF;
@@ -93,8 +96,11 @@ fConvert.addEventListener("click", convertToF);
 
 function convertToC(event) {
   event.preventDefault();
+  fConvert.classList.remove("active");
+  cConvert.classList.add("active");
+
   let temp = document.querySelector("#currentTemp");
-  temp.innerHTML = `${Math.round(celsiusTemp)}°`;
+  temp.innerHTML = `${Math.round(celsiusTemp)}`;
 
   let cMin = document.querySelector("#minTemp");
   cMin.innerHTML = `${Math.round(celsiusMin)}°`;
