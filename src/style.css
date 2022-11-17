@@ -30,7 +30,7 @@
 
 h1 {
   text-align: center;
-  margin-top: 60px;
+  margin-top: -7px;
   opacity: 0.9;
   font-size: 75px;
   font-weight: 700;
@@ -71,11 +71,18 @@ ul {
   text-align: right;
 }
 
-.city {
+.city,
+.weatherDescription {
   text-transform: uppercase;
   margin-top: -27px;
   text-align: right;
   font-weight: 500;
+}
+
+.tempIcon {
+  width: 50px;
+  margin-top: -50px;
+  margin-left: 315px;
 }
 
 .date {

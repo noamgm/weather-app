@@ -27,7 +27,18 @@ let currentTime = new Date();
 displayDate.innerHTML = formatDate(currentTime);
 
 function showWeather(response) {
-  document.querySelector("#city").innerHTML = response.data.name;
+  document.querySelector("#city").innerHTML = `${response.data.name}`;
+  document.querySelector(
+    "#weatherDescription"
+  ).innerHTML = `${response.data.weather[0].description}`;
+
+  document
+    .querySelector("#tempIcon")
+    .setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
+
   document.querySelector("#currentTemp").innerHTML = Math.round(
     response.data.main.temp
   );
