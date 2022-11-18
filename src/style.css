@@ -67,7 +67,7 @@ ul {
   margin-right: 5px;
 }
 
-.temp {
+.forecast-temp {
   text-align: right;
 }
 
@@ -90,7 +90,7 @@ ul {
   font-weight: 550;
 }
 
-.dates {
+.forecast {
   font-weight: 500;
 }
 
@@ -119,6 +119,6 @@ a {
 
 a:hover {
   transition: 150ms;
-  color: rgb(83, 82, 82);
+  color: gray;
   text-decoration: none;
 }
