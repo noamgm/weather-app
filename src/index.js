@@ -26,6 +26,13 @@ let displayDate = document.querySelector("#date");
 let currentTime = new Date();
 displayDate.innerHTML = formatDate(currentTime);
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "215576bab28022db35e6e64f040e1b56";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function showWeather(response) {
   document.querySelector("#city").innerHTML = `${response.data.name}`;
   document.querySelector(
@@ -58,6 +65,33 @@ function showWeather(response) {
   celsiusMin = response.data.main.temp_min;
   celsiusMax = response.data.main.temp_max;
   windMetric = response.data.wind.speed;
+
+  getForecast(response.data.coord);
+}
+
+function displayForecast(response) {
+  console.log(response.data.daily);
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Thu", "Fri", "Sat"];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+        <div class="col-9" id="forecastDay">${day}</div>
+        <div class="col-3" id="forecastTemp">
+          <span class="forecast-min-tomorrow">11°</span>
+           | 
+          <span class="forecast-max-tomorrow">17°</span>
+          
+        </div>
+      `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
 
 function searchCity(city) {
@@ -125,3 +159,5 @@ function convertToC(event) {
 
 let cConvert = document.querySelector("#cUnit");
 cConvert.addEventListener("click", convertToC);
+
+searchCity("Dublin");

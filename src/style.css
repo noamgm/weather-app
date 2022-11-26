@@ -67,8 +67,10 @@ ul {
   margin-right: 5px;
 }
 
-.forecast-temp {
-  text-align: right;
+.forecast {
+  line-height: 2.5em;
+  margin-right: -20px;
+  text-transform: uppercase;
 }
 
 .city,
@@ -92,6 +94,7 @@ ul {
 
 .forecast {
   font-weight: 500;
+  text-align: left;
 }
 
 .credit {
