@@ -35,7 +35,6 @@ let currentTime = new Date();
 displayDate.innerHTML = formatDate(currentTime);
 
 function getForecast(coordinates) {
-  console.log(coordinates);
   let apiKey = "215576bab28022db35e6e64f040e1b56";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
