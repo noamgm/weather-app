@@ -106,15 +106,6 @@ ul {
   font-size: 13px;
 }
 
-.units .active {
-  color: black;
-  cursor: default;
-}
-
-.units .active:hover {
-  text-decoration: none;
-}
-
 a {
   color: black;
   text-decoration: none;
