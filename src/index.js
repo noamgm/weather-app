@@ -66,7 +66,7 @@ function showWeather(response) {
     response.data.main.humidity;
   document.querySelector("#windData").innerHTML = `${Math.round(
     response.data.wind.speed
-  )}kmh`;
+  )}m/h`;
 
   celsiusTemp = response.data.main.temp;
   celsiusMin = response.data.main.temp_min;
